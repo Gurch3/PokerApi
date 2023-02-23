@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'PokerApi1'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F2C7B010E1FF4DAD88ABECDF711E5FFA }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8CFCD1B8173A411C95DB5DFB529D6BF2 }}
           package: .
