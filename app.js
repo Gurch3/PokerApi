@@ -23,7 +23,7 @@ app.get("/allin/:id", (req, res) =>{
 app.get("/results", (req, res) =>{
     res.send(resultList)
 })
-app.delete("/remove", (req, res) =>{
+app.get("/remove", (req, res) =>{
     resultList.pop()
     res.send("Result Removed")
 })
