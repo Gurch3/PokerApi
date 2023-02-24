@@ -7,7 +7,7 @@ const bodyParser = require("body-parser")
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.json())
 
-let resultList = [{hand: "78s",result: "Win"},{hand: "AA",result: "loss"},{hand: "AQo",result: "Loss"}]
+let resultList = [{hand: "78s",result: "Win"},{hand: "AA",result: "Loss"},{hand: "AQo",result: "Loss"}]
 
 var allinList = JSON.parse(fs.readFileSync( __dirname + "/data.json", 'UTF-8'));
 
@@ -27,7 +27,7 @@ app.get("/allin/:id", (req, res) =>{
 app.get("/results", (req, res) =>{
     res.send(resultList)
 })
-app.get("/remove", (req, res) =>{
+app.delete("/remove", (req, res) =>{
     resultList.pop()
     res.send("Result Removed")
 })
@@ -37,8 +37,8 @@ app.get("/addResult", (req, res) =>{
 })
 
 app.post("/addResult", (req, res) =>{
-    let hand1 = req.body.Hand
-    let result1 = req.body.Result
+    let hand1 = req.body.hand
+    let result1 = req.body.result
 
     resultList.push({hand: `${hand1}`, result: `${result1}`})
     res.send("Result Added")
