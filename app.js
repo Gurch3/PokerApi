@@ -16,12 +16,8 @@ app.get("/", (req,res) =>{
 })
 
 app.get("/allin/:id", (req, res) =>{
-    console.log(req.params.id)
     var id = +req.params.id
-    console.log(id)
     var allin = allinList.find(a => a.ID == id);
-    console.log(allin)
-    console.log(allinList)
     res.send(allin);
 })
 app.get("/results", (req, res) =>{
